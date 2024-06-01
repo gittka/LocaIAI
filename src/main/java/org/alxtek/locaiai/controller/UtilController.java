@@ -9,4 +9,10 @@ public class UtilController {
     public String index() {
         return "index";
     }
+
+
+    @GetMapping("/generate")
+    public String generate() {
+        return "generate";
+    }
 }
