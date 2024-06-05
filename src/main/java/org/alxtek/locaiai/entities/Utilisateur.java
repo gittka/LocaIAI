@@ -21,9 +21,9 @@ public class Utilisateur {
     @Enumerated(EnumType.STRING)
     private TypeUtilisateur type;
     @OneToMany(mappedBy = "hote", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private ArrayList<Annonce> annonces = new ArrayList<>();
+    private List<Annonce> annonces = new ArrayList<>();
     @OneToMany(mappedBy = "client", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private ArrayList<Reservation> reservations = new ArrayList<>();
+    private List<Reservation> reservations = new ArrayList<>();
     @OneToMany(mappedBy = "utilisateur", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Evaluation> evaluations = new ArrayList<>();
 }

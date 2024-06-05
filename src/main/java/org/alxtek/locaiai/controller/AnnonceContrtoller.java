@@ -1,11 +1,11 @@
 package org.alxtek.locaiai.controller;
 
 import lombok.AllArgsConstructor;
-import org.alxtek.locaiai.repository.AnnoceRepository;
-import org.springframework.stereotype.Controller;
+import org.alxtek.locaiai.repository.AnnonceRepository;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @AllArgsConstructor
 public class AnnonceContrtoller {
-    private final AnnoceRepository annoceRepository;
+    private final AnnonceRepository annonceRepository;
 }

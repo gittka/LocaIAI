@@ -12,8 +12,7 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private LocalDate dateDebut;
-    private LocalDate dateFin;
+    private LocalDate dateReservation;
     private int nombrePersonnes;
     @Enumerated(EnumType.STRING)
     private StatutReservation statut;

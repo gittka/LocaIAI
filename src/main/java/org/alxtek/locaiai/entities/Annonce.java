@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.alxtek.locaiai.enums.Disponibilite;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +20,8 @@ public class Annonce {
     @Enumerated(EnumType.STRING)
     private Disponibilite disponibilite;
     private double promotion;
+    private LocalDate debutAnnonce;
+    private LocalDate finAnnonce;
     @ManyToOne
     @JoinColumn(name = "hote_id")
     private Utilisateur hote;

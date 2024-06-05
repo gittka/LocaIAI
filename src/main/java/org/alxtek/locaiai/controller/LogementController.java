@@ -2,9 +2,9 @@ package org.alxtek.locaiai.controller;
 
 import lombok.AllArgsConstructor;
 import org.alxtek.locaiai.repository.LogementRepository;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @AllArgsConstructor
 public class LogementController {
     private final LogementRepository logementRepository;
