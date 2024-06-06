@@ -26,4 +26,6 @@ public class Utilisateur {
     private List<Reservation> reservations = new ArrayList<>();
     @OneToMany(mappedBy = "utilisateur", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Evaluation> evaluations = new ArrayList<>();
+    @OneToMany(mappedBy = "proprietaire", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Logement> logements = new ArrayList<>();
 }

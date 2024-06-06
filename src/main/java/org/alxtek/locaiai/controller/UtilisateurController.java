@@ -2,11 +2,9 @@ package org.alxtek.locaiai.controller;
 
 import lombok.AllArgsConstructor;
 import org.alxtek.locaiai.entities.Utilisateur;
-import org.alxtek.locaiai.repository.UtilisateurRepository;
 import org.alxtek.locaiai.web.UtilisateurServiveImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

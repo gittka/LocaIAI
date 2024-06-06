@@ -19,6 +19,9 @@ public class Logement {
     private String codePostal;
     @Enumerated(EnumType.STRING)
     private TypeLogement typeLogement;
+    @ManyToOne
+    @JoinColumn(name = "proprietaire_id")
+    private Utilisateur proprietaire;
     @OneToMany(mappedBy = "logement", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Annonce> annonces = new ArrayList<>();
 }
