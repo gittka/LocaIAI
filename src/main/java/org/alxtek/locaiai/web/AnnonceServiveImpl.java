@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import org.alxtek.locaiai.entities.Annonce;
 import org.alxtek.locaiai.repository.AnnonceRepository;
 import org.alxtek.locaiai.service.AnnonceService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 
@@ -18,6 +21,15 @@ public class AnnonceServiveImpl implements AnnonceService {
     @Override
     public List<Annonce> findAllAnnonces() {
         return annonceRepository.findAll();
+    }
+
+    @Override
+    public Page<Annonce> getAllAnnonces(int page, int size) {
+        return annonceRepository.findAll(PageRequest.of(page, size));
+    }
+
+    public Page <Annonce> getAllAnnonces(Pageable pageable) {
+        return annonceRepository.findAll(pageable);
     }
 
     @Override

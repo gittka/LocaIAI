@@ -7,5 +7,4 @@ export class Utilisateur{
   email: string | undefined = "";
   motDePasse: string | undefined = "";
   token: string = "";
-  type: Type = Type.GUEST;
 }

@@ -185,6 +185,7 @@ public class UtilsService {
             List<TypeLogement> types = List.of(TypeLogement.values());
             int randomIndex = random.nextInt(TypeLogement.values().length);
             logement.setAdresse(UUID.randomUUID().toString().substring(0, 8));
+            logement.setImage("assets/images/house/" + random.nextInt(1, 40) + ".jpg");
             logement.setVille(villes.get(random.nextInt(villes.size())));
             logement.setCodePostal(this.getRandomInt());
             Utilisateur utilisateur = utilisateurs.get(random.nextInt(utilisateurs.size()));

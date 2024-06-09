@@ -18,6 +18,15 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatOption} from "@angular/material/autocomplete";
 import {MatSelect} from "@angular/material/select";
+import {MatIcon} from "@angular/material/icon";
+import {MatCard, MatCardContent, MatCardImage} from "@angular/material/card";
+import {MatPaginator} from "@angular/material/paginator";
+import {AnnonceDetailComponent} from "./annonce-detail/annonce-detail.component";
+import {MatButton} from "@angular/material/button";
+import { PopupComponent } from './popup/popup.component';
+import { EdituserComponent } from './edituser/edituser.component';
+import { DeleteuserComponent } from './deleteuser/deleteuser.component';
+import { DetailsuserComponent } from './detailsuser/detailsuser.component';
 
 @NgModule({
   declarations: [
@@ -29,20 +38,31 @@ import {MatSelect} from "@angular/material/select";
     ReservationComponent,
     HeaderComponent,
     FooterComponent,
-    AdminComponent
+    AdminComponent,
+    AnnonceDetailComponent,
+    PopupComponent,
+    EdituserComponent,
+    DeleteuserComponent,
+    DetailsuserComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgOptimizedImage,
-    HttpClientModule,
-    ReactiveFormsModule,
-    MatLabel,
-    MatFormField,
-    MatOption,
-    MatSelect,
-    FormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgOptimizedImage,
+        HttpClientModule,
+        ReactiveFormsModule,
+        MatLabel,
+        MatFormField,
+        MatOption,
+        MatSelect,
+        FormsModule,
+        MatIcon,
+        MatCardContent,
+        MatCard,
+        MatPaginator,
+        MatCardImage,
+        MatButton
+    ],
   providers: [
     provideAnimationsAsync()
   ],

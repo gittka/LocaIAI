@@ -1,10 +1,10 @@
-import {Type} from "../models/type.enum";
+import {TypeUtilisateur} from "../models/type.enum";
 
 export interface User{
-  id: number|undefined;
-  nom: string | undefined ;
-  prenom: string | undefined ;
-  email: string | undefined;
-  motDePasse: string | undefined;
-  type: Type ;
+  id: number;
+  nom: string  ;
+  prenom: string  ;
+  email: string ;
+  motDePasse: string ;
+  type: TypeUtilisateur ;
 }

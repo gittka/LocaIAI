@@ -1,5 +1,6 @@
 package org.alxtek.locaiai.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 import org.alxtek.locaiai.enums.StatutReservation;
@@ -19,9 +20,11 @@ public class Reservation {
     private double prixTotal;
     @ManyToOne
     @JoinColumn(name = "client_id")
+    @JsonBackReference
     private Utilisateur client;
     @ManyToOne
     @JoinColumn(name = "annonce_id")
+    @JsonBackReference
     private Annonce annonce;
 
 }

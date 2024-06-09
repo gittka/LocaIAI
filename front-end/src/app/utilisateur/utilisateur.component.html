@@ -18,6 +18,7 @@
             <th scope="col">E-mail</th>
             <th scope="col">Type</th>
             <th scope="col">Actions</th>
+
           </tr>
           </thead>
           <tbody>
@@ -28,9 +29,9 @@
             <td>{{ u.email }}</td>
             <td>{{ u.type }}</td>
             <td>
-              <button class="btn btn-primary me-1"> Edit</button>
-              <button class="btn btn-danger ">Delete</button>
-              <button class="btn btn-success ms-1">Details</button>
+              <button type="button" (click)="openEditUserDialog(u)"  class="btn btn-primary me-1"><mat-icon> border_color</mat-icon> <span class="d-none d-sm-inline">Edit</span></button>
+              <button type="button" (click)="openDeleteUserDialog(u.id ? u.id : 0)" class="btn btn-danger "><mat-icon>delete</mat-icon>  <span class="d-none d-sm-inline">Delete</span></button>
+              <button type="button" (click)="openDetailsDialog(u)" class="btn btn-success ms-1">	<mat-icon> notes</mat-icon> <span class="d-none d-sm-inline">Details</span></button>
             </td>
           </tr>
           </tbody>

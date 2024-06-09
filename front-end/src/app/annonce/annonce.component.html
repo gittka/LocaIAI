@@ -1,1 +1,48 @@
-<p>annonce works!</p>
+<!--<div class="container mt-5" >
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center">Annonces</h1>
+    </div>
+  </div>-->
+<!--</div>
+
+<div class="container">
+  <mat-card *ngFor="let annonce of annonces">
+    <img mat-card-image src="{{ annonce.logement.image || 'https://via.placeholder.com/150' }}" alt="Image de logement" fill>
+    <mat-card-content>
+      <h2>{{ annonce.note }}</h2>
+      <p>{{ annonce.description }}</p>
+      <p>{{ annonce.prix }} €</p>
+      <button mat-button (click)="openDetail(annonce)">Détails</button>
+    </mat-card-content>
+  </mat-card>
+  <mat-paginator [length]="length" [pageSize]="pageSize" (page)="onPageChange($event)"></mat-paginator>
+</div>-->
+
+<div class="annonces align-items-center align-self-center">
+  <div *ngFor="let annonce of annonces" class="card">
+    <img [src]="annonce.logement.image" alt="Image du logement" class="img-fluid">
+    <div class="card-body">
+      <h5 class="card-title">{{ annonce.titre }}</h5>
+      <p class="card-text">{{ annonce.description }}</p>
+      <p class="card-text">Prix: {{ annonce.prix }}€</p>
+      <button (click)="openPopup(annonce)" class="btn btn-primary">Détails</button>
+      <div class="rating">
+        <!-- code pour afficher la note -->
+        Note: {{ annonce.evaluations.length > 0 ? annonce.evaluations[0].note : 'N/A' }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pagination">
+  <button (click)="previousPage()" [disabled]="pageIndex === 0">Précédent</button>
+  <button (click)="nextPage()" [disabled]="pageIndex === length - 1">Suivant</button>
+</div>
+<!-- Popup Component -->
+<app-popup *ngIf="selectedAnnonce" [annonce]="selectedAnnonce" (close)="closePopup()"></app-popup>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <path fill="#36363e" fill-opacity="1"
+        d="M0,96L40,117.3C80,139,160,181,240,186.7C320,192,400,160,480,149.3C560,139,640,149,720,176C800,203,880,245,960,250.7C1040,256,1120,224,1200,229.3C1280,235,1360,277,1400,298.7L1440,320L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path>
+</svg>

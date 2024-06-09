@@ -1,0 +1,13 @@
+<!-- popup.component.html -->
+<div class="popup">
+  <div class="popup-content">
+    <span (click)="closePopup()" class="close-btn">&times;</span>
+    <h2>{{ annonce.titre }}</h2>
+    <p>{{ annonce.description }}</p>
+    <p>Prix: {{ annonce.prix }}€</p>
+    <div class="rating">
+      <!-- Affichez les évaluations ici -->
+      Note: {{ annonce.evaluations.length > 0 ? annonce.evaluations[0].note : 'N/A' }}
+    </div>
+  </div>
+</div>

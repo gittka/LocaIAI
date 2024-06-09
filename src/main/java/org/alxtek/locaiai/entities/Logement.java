@@ -1,5 +1,7 @@
 package org.alxtek.locaiai.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 import org.alxtek.locaiai.enums.TypeLogement;
@@ -16,12 +18,15 @@ public class Logement {
     private Long id;
     private String adresse;
     private String ville;
+    private String image;
     private String codePostal;
     @Enumerated(EnumType.STRING)
     private TypeLogement typeLogement;
     @ManyToOne
     @JoinColumn(name = "proprietaire_id")
+    @JsonBackReference
     private Utilisateur proprietaire;
     @OneToMany(mappedBy = "logement", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Annonce> annonces = new ArrayList<>();
 }

@@ -24,7 +24,6 @@ public class UtilisateurDto {
                .prenom(utilisateur.getPrenom())
                .email(utilisateur.getEmail())
                .motDePasse(utilisateur.getMotDePasse())
-               .utilisateur(utilisateur.getType())
                .build();
     }
     
@@ -35,7 +34,6 @@ public class UtilisateurDto {
                 .prenom(utilisateurDto.getPrenom())
                 .email(utilisateurDto.getEmail())
                 .motDePasse(utilisateurDto.getMotDePasse())
-                .type(utilisateurDto.getUtilisateur())
                 .build();
     }
 

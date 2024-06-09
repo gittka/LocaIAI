@@ -36,9 +36,9 @@ public class UtilisateurServiveImpl implements UtilisateurService {
             u = utilisateurRepository.findById(utilisateur.getId()).get();
             u.setNom(utilisateur.getNom());
             u.setEmail(utilisateur.getEmail());
-            u.setType(utilisateur.getType());
             u.setPrenom(utilisateur.getPrenom());
             u.setMotDePasse(utilisateur.getMotDePasse());
+            u.setType(utilisateur.getType());
             utilisateurRepository.save(u);
         }
         return u;

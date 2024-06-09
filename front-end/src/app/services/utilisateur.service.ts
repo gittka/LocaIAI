@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable, subscribeOn} from "rxjs";
-import {Utilisateur} from "../models/utilisateur.model";
 import {User} from "../interfaces/utilisateur";
 
 @Injectable({
@@ -13,16 +12,18 @@ export class UtilisateurService {
   constructor(private httpClient: HttpClient) {
   }
 
-  saveUtilisateur(utilisateur: Utilisateur): Observable<User> {
+  saveUtilisateur(utilisateur: User): Observable<User> {
     return this.httpClient.post<User>(`${this.serverUrl}/utilisateur`, utilisateur);
   }
 
-  updateUtilisateur(utilisateur: Utilisateur): Observable<User> {
-    return this.httpClient.put<User>(`${this.serverUrl}/updateUtilisateur`, utilisateur);
+  updateUtilisateur(utilisateur: User): Observable<User> {
+    return this.httpClient.put<User>(`${this.serverUrl}/updateUtilisateur`, utilisateur,{headers:{
+      'Content-Type':'application/json'
+      }});
   }
 
-  deleteUtilisateur(id: number): Observable<void> {
-    return this.httpClient.delete<void>(`${this.serverUrl}/delete/${id}`);
+  deleteUtilisateur(id: number): Observable<User> {
+    return this.httpClient.delete<User>(`${this.serverUrl}/delete/${id}`);
   }
 
   getAllUtilisateur(): Observable<User[]> {

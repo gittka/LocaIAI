@@ -2,3 +2,10 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Global styles for modals if needed */
+.mat-dialog-container {
+  padding: 0;
+  border-radius: 8px;
+  max-height: 90vh; /* Limite la hauteur du conteneur de dialogue à 90% de la hauteur de la fenêtre */
+  overflow-y: auto; /* Permet le défilement vertical */
+}
